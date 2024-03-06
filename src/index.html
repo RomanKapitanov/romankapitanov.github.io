@@ -13,7 +13,7 @@
             <li><a href="#">Файл</a>
                 <ul>
                     <li><a href="#"><input type="file">Открыть</a></li>
-                    <li><a href="#"><input type="button" value="Download Now" onClick="window.location.href='yourpage.html'"> Сохранить</a></li>
+                    <li><a href="#"><input type="button" id = "Save_file"> Сохранить</a></li>
                 </ul>
             </li>
             <li><a href="#">Процессы</a></li>
@@ -41,7 +41,7 @@
             <div class="countSteps"><span>Кол-во шагов:</span><input id = "countSteps" type="number" style="width: 7em" min="1"></div>
             <div class="timeStart"><span>Время старта:</span><input id = "timeStart" type="number" style="width: 7em" min="0"></div>
             <button id="btnAddField">Сохранить</button>
-            <input type="button" id="btnCancelAddField" onclick="javascript:showhide('uniquename')" value="Отказ">
+            <input type="button" id="btnCancelAddField" onclick="showhide('uniquename')" value="Отказ">
         </div>
     </div>
     <script src="script.js"></script>

@@ -86,6 +86,8 @@ table {
 #btnAddProcess {
     display: block;
     background-color: aliceblue;
+    border: solid 2px;
+    border-radius: 5px;
     width: 250px;
     height: 115px;
     font-size: 25px;
@@ -97,6 +99,7 @@ table {
     margin: auto;
     display: none;
     background-color: aliceblue;
+    border-radius: 5px;
     text-align: center;
     width: 350px;
     font-size: 20px;
