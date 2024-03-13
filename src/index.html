@@ -10,16 +10,18 @@
 <body>
     <header>
         <ul id="navbar">
+            <!--
             <li><a href="#">Файл</a>
                 <ul>
                     <li><a href="#"><input type="file">Открыть</a></li>
-                    <li><a href="#"><input type="button" id = "Save_file"> Сохранить</a></li>
+                    <li><a href="#"><input type="button" id="Save_file"> Сохранить</a></li>
                 </ul>
             </li>
+-->
             <li><a href="#">Процессы</a></li>
             <li><a href="#">Режим</a></li>
-            <li><a href="#">Играть</a></li>
-            <li><a href="#">Выход</a></li>
+            <li><a href="#"><input type="button" id="btnPlay">Играть</a></li>
+            <!--            <li><a href="#">Выход</a></li>-->
         </ul>
     </header>
     <div class="process_table">
@@ -33,18 +35,41 @@
             </tr>
         </table>
     </div>
+    <div class="btnProcessing">
+        <input type="button" value="Изменить&#13;&#10;время" id="btnEditTime">
+        <input type="button" value="Сортировка&#13;&#10;событий" id="btnSort">
+        <input type="button" value="Выбрать&#13;&#10;следующее текущее" id=btnSelectCurrent>
+        <input type="button" value="Обработать&#13;&#10;текущее событие">
+        <input type="button" value="Добавить шаг&#13;&#10;другого процесса">
+    </div>
     <div class="footer_menu">
         <input type="button" id="btnAddProcess" onclick="toggle_visibility('id_of_element_to_toggle');" value="Добавить процесс">
         <div id="inputInfoAboutProcess">
             <span class="captionInfo">Ввод информации о процессе</span>
-            <div class="nameProcess"><span>Имя процесса:</span><input id = "nameProcess" type="text" style="width: 7em"></div>
-            <div class="countSteps"><span>Кол-во шагов:</span><input id = "countSteps" type="number" style="width: 7em" min="1"></div>
-            <div class="timeStart"><span>Время старта:</span><input id = "timeStart" type="number" style="width: 7em" min="0"></div>
+            <div class="nameProcess"><span>Имя процесса:</span><input id="nameProcess" type="text" style="width: 7em" value="Имя"></div>
+            <div class="countSteps"><span>Кол-во шагов:</span><input id="countSteps" type="number" style="width: 7em" min="1" value="1"></div>
+            <div class="timeStart"><span>Время старта:</span><input id="timeStart" type="number" style="width: 7em" min="0" value="0"></div>
             <button id="btnAddField">Сохранить</button>
             <input type="button" id="btnCancelAddField" onclick="showhide('uniquename')" value="Отказ">
         </div>
     </div>
+    <div class="event_table">
+        <table id="second_table">
+            <tr class="menu_tr">
+                <th>Время</th>
+                <th>Процесс</th>
+                <th>Шаг</th>
+                <th>Событие</th>
+                <th>Длительность</th>
+                <th>Статус</th>
+            </tr>
+        </table>
+    </div>
+    <div class="nowTimeSTbl">
+        <span class='nowTime'>Текущее время:</span>
+    </div>
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 
 </html>
