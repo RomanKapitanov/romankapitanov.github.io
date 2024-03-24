@@ -38,9 +38,9 @@
     <div class="btnProcessing">
         <input type="button" value="Изменить&#13;&#10;время" id="btnEditTime">
         <input type="button" value="Сортировка&#13;&#10;событий" id="btnSort">
-        <input type="button" value="Выбрать&#13;&#10;следующее текущее" id=btnSelectCurrent>
-        <input type="button" value="Обработать&#13;&#10;текущее событие">
-        <input type="button" value="Добавить шаг&#13;&#10;другого процесса">
+        <input type="button" value="Выбрать&#13;&#10;следующее текущее" id="btnSelectCurrent">
+        <input type="button" value="Обработать&#13;&#10;текущее событие" id="btnProcessCurrentEvent">
+        <input type="button" value="Добавить шаг&#13;&#10;другого процесса" id="btnAddStepProcess">
     </div>
     <div class="footer_menu">
         <input type="button" id="btnAddProcess" onclick="toggle_visibility('id_of_element_to_toggle');" value="Добавить процесс">
@@ -48,10 +48,50 @@
             <span class="captionInfo">Ввод информации о процессе</span>
             <div class="nameProcess"><span>Имя процесса:</span><input id="nameProcess" type="text" style="width: 7em" value="Имя"></div>
             <div class="countSteps"><span>Кол-во шагов:</span><input id="countSteps" type="number" style="width: 7em" min="1" value="1"></div>
-            <div class="timeStart"><span>Время старта:</span><input id="timeStart" type="number" style="width: 7em" min="0" value="0"></div>
+            <div class="timeStart"><span>Время старта:</span><input id="timeStart" type="number" style="width: 7em" min=0 value=0></div>
             <button id="btnAddField">Сохранить</button>
-            <input type="button" id="btnCancelAddField" onclick="showhide('uniquename')" value="Отказ">
+            <input type="button" id="btnCancelAddField" onclick="showhideField('uniquename')" value="Отказ">
         </div>
+    </div>
+    <div class="InfoEvent">
+        <span>Информация о текущем событии</span>
+        <div class="timeEvent"><span>Время</span><input id="timeEvent" type="text" style="width: 7em" readonly></div>
+        <div class="processEvent"><span>Процесс</span><input id="processEvent" type="text" style="width: 7em" readonly></div>
+        <div class="stepEvent"><span>Шаг</span><input id="stepEvent" type="text" style="width: 7em" readonly></div>
+        <div class="EvEvent"><span>Событие</span><input id="EvEvent" type="text" style="width: 7em" readonly></div>
+
+        <button id="btnCompleteProcess">Завершить процесс</button>
+        <input type="button" id="btnCancelAddNewStep" onclick="showhideEvent('uniquename')" value="Отказ">
+        <button id="btnNewStep">Добавить новый шаг PS</button>
+        <input type="button" id="btnPSQueueReady" value="PS в очередь готовых">
+    </div>
+    <div class="Input_info_NEvent">
+        <span>Ввод информации о новом событии</span>
+        <div class="timeNewEvent"><span>Время</span><input id="timeNewEvent" type="text" style="width: 7em" readonly></div>
+        <div class="NewEvent"><span>Событие</span><input id="NewEvent" type="text" style="width: 7em" readonly></div>
+        <div class="NameNewEvent"><span>Имя процесса</span>
+            <select id="addOption" style="width: 7em">
+                <option selected disabled>Выберите процесс</option>
+            </select>
+        </div>
+        <div class="StepNewEvent"><span>Имя шага</span><input id="StepNewEvent" type="text" style="width: 7em" value="P1"></div>
+        <div class="HowLongEvent"><span>Длительность</span><input id="HowLongEvent" type="number" style="width: 7em" min="1" value="1"></div>
+        <button id="btnsave">Сохранить</button>
+        <input type="button" id="btnCancelAddNewStep" onclick="showhideNewEvent('uniquename')" value="Отказ">
+    </div>
+    <div class="Input_info_NEventTwo">
+        <span>Ввод информации о новом событии</span>
+        <div class="timeNewEventTwo"><span>Время</span><input id="timeNewEventTwo" type="text" style="width: 7em" readonly></div>
+        <div class="NewEventTwo"><span>Событие</span><input id="NewEventTwo" type="text" style="width: 7em" readonly></div>
+        <div class="NameNewEventTwo"><span>Имя процесса</span>
+            <select id="addOptionTwo" style="width: 7em">
+                <option selected disabled>Выберите процесс</option>
+            </select>
+        </div>
+        <div class="StepNewEventTwo"><span>Имя шага</span><input id="StepNewEventTwo" type="text" style="width: 7em" value="P1"></div>
+        <div class="HowLongEventTwo"><span>Длительность</span><input id="HowLongEventTwo" type="number" style="width: 7em" min="1" value="1"></div>
+        <button id="btnsaveTwo">Сохранить</button>
+        <input type="button" id="btnCancelAddNewStepTwo" onclick="showhideNewEventTwo('uniquename')" value="Отказ">
     </div>
     <div class="event_table">
         <table id="second_table">
